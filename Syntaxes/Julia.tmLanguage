@@ -42,6 +42,10 @@
 		</dict>
 		<dict>
 			<key>include</key>
+			<string>#type_decl</string>
+		</dict>
+		<dict>
+			<key>include</key>
 			<string>#function_decl</string>
 		</dict>
 		<dict>
@@ -553,6 +557,57 @@
 					<string>\\(\\|[0-3]\d{,2}|[4-7]\d?|x[a-fA-F0-9]{,2}|u[a-fA-F0-9]{,4}|U[a-fA-F0-9]{,8}|.)</string>
 					<key>name</key>
 					<string>constant.character.escape.julia</string>
+				</dict>
+			</array>
+		</dict>
+		<key>type_decl</key>
+		<dict>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>captures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>keyword.control.type.julia</string>
+						</dict>
+						<key>2</key>
+						<dict>
+							<key>name</key>
+							<string>entity.name.type.julia</string>
+						</dict>
+						<key>3</key>
+						<dict>
+							<key>name</key>
+							<string>entity.other.inherited-class.julia</string>
+						</dict>
+						<key>4</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.separator.inheritance.julia</string>
+						</dict>
+					</dict>
+					<key>match</key>
+					<string>(type|immutable)\s+([a-zA-Z0-9_]+)(\s*(&lt;:)\s*[.a-zA-Z0-9_:]+)?</string>
+					<key>name</key>
+					<string>meta.type.julia</string>
+				</dict>
+				<dict>
+					<key>captures</key>
+					<dict>
+						<key>2</key>
+						<dict>
+							<key>name</key>
+							<string>support.type.julia</string>
+						</dict>
+					</dict>
+					<key>comment</key>
+					<string>Matches a typed variable, such as 'id::String'</string>
+					<key>match</key>
+					<string>([a-zA-Z0-9_]+)(::[a-zA-Z0-9_{}]+)</string>
+					<key>name</key>
+					<string>meta.other.typed-variable.julia</string>
 				</dict>
 			</array>
 		</dict>
