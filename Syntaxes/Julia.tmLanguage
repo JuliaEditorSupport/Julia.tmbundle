@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
-	<!-- TODO:
-	Syntax types, tuple types, union
-	take out '::Type' -->
 <dict>
+	<key>comment</key>
+	<string>
+	TODO:
+	* syntax types, tuple types, union
+	* take out ::Type
+	</string>
 	<key>fileTypes</key>
 	<array>
 		<string>jl</string>
@@ -76,7 +79,7 @@
 						</dict>
 					</dict>
 					<key>name</key>
-					<string>array.julia</string>
+					<string>meta.array.julia</string>
 					<key>patterns</key>
 					<array>
 						<dict>
@@ -101,7 +104,7 @@
 					<key>match</key>
 					<string>(?:\(|\)|\[|\]|\{|\}|,)(?!('|(?:\.'))*\.?')</string>
 					<key>name</key>
-					<string>bracket.julia</string>
+					<string>meta.bracket.julia</string>
 				</dict>
 			</array>
 		</dict>
@@ -109,30 +112,30 @@
 		<dict>
 			<key>patterns</key>
 			<array>
-                <dict>
-                    <key>begin</key>
-                    <string>#=</string>
-                    <key>beginCaptures</key>
-                    <dict>
-                            <key>0</key>
-                            <dict>
-                                    <key>name</key>
-                                    <string>punctuation.definition.comment.begin.julia</string>
-                            </dict>
-                    </dict>
-                    <key>end</key>
-                    <string>=#</string>
-                    <key>endCaptures</key>
-                    <dict>
-                            <key>0</key>
-                            <dict>
-                                    <key>name</key>
-                                    <string>punctuation.definition.comment.end.julia</string>
-                            </dict>
-                    </dict>
-                    <key>name</key>
-                    <string>comment.block.number-sign-equals.julia</string>
-                </dict>
+				<dict>
+					<key>begin</key>
+					<string>#=</string>
+					<key>beginCaptures</key>
+					<dict>
+						<key>0</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.comment.begin.julia</string>
+						</dict>
+					</dict>
+					<key>end</key>
+					<string>=#</string>
+					<key>endCaptures</key>
+					<dict>
+						<key>0</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.comment.end.julia</string>
+						</dict>
+					</dict>
+					<key>name</key>
+					<string>comment.block.number-sign-equals.julia</string>
+				</dict>
 				<dict>
 					<key>captures</key>
 					<dict>
@@ -189,8 +192,6 @@
 			<key>patterns</key>
 			<array>
 				<dict>
-					<key>match</key>
-					<string>^\s*([a-zA-Z0-9\._]+!?)(?=.*\)\s*=(?!=))</string>
 					<key>captures</key>
 					<dict>
 						<key>1</key>
@@ -199,10 +200,10 @@
 							<string>entity.name.function.julia</string>
 						</dict>
 					</dict>
+					<key>match</key>
+					<string>^\s*([a-zA-Z0-9\._]+!?)(?=.*\)\s*=(?!=))</string>
 				</dict>
 				<dict>
-					<key>match</key>
-					<string>\b(function|macro)\s+([a-zA-Z0-9_\.]+!?)\b</string>
 					<key>captures</key>
 					<dict>
 						<key>1</key>
@@ -216,6 +217,8 @@
 							<string>entity.name.function.julia</string>
 						</dict>
 					</dict>
+					<key>match</key>
+					<string>\b(function|macro)\s+([a-zA-Z0-9_\.]+!?)\b</string>
 				</dict>
 			</array>
 		</dict>
