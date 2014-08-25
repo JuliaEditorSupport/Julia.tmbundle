@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>beforeRunningCommand</key>
+	<string>saveModifiedFiles</string>
+	<key>command</key>
+	<string>#!/usr/bin/env ruby18 -wKU
+require "#{ENV["TM_SUPPORT_PATH"]}/lib/escape"
+require "#{ENV['TM_SUPPORT_PATH']}/lib/tm/save_current_document"
+require "#{ENV["TM_SUPPORT_PATH"]}/lib/tm/executor"
+
+TextMate.save_if_untitled('jl')
+TextMate::Executor.run(e_sh(ENV['TM_JULIA']), ENV['TM_FILEPATH'], :version_args =&gt; '-v', :version_regex =&gt; /(\w+ [\d.]+).*/)
+</string>
+	<key>input</key>
+	<string>none</string>
+	<key>inputFormat</key>
+	<string>text</string>
+	<key>keyEquivalent</key>
+	<string>@r</string>
+	<key>name</key>
+	<string>Run Julia</string>
+	<key>outputCaret</key>
+	<string>afterOutput</string>
+	<key>outputFormat</key>
+	<string>html</string>
+	<key>outputLocation</key>
+	<string>newWindow</string>
+	<key>scope</key>
+	<string>source.julia</string>
+	<key>semanticClass</key>
+	<string>process.run.script.julia</string>
+	<key>uuid</key>
+	<string>E8BC7C6A-067B-4D5C-927A-E4EBF70614F5</string>
+	<key>version</key>
+	<integer>2</integer>
+	<key>requiredCommands</key>
+	<array>
+		<dict>
+			<key>command</key>
+			<string>julia</string>
+			<key>locations</key>
+			<array>
+				<string>/Applications/Julia-0.3.app/Contents/Resources/julia/bin/julia</string>
+			</array>
+			<key>moreInfoURL</key>
+			<string>http://julialang.org/downloads/</string>
+			<key>variable</key>
+			<string>TM_JULIA</string>
+		</dict>
+	</array>
+</dict>
+</plist>

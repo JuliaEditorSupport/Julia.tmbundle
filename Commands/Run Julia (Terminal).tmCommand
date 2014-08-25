@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>beforeRunningCommand</key>
+	<string>nop</string>
+	<key>command</key>
+	<string>#!/bin/bash
+[[ -z "$TM_FILEPATH" ]] &amp;&amp; TM_TMPFILE=$(mktemp -t pythonInTerm)
+: "${TM_FILEPATH:=$TM_TMPFILE}"; cat &gt;"$TM_FILEPATH"
+
+esc () {
+STR="$1" ruby18 &lt;&lt;"RUBY"
+   str = ENV['STR']
+   str = str.gsub(/'/, "'\\\\''")
+   str = str.gsub(/[\\"]/, '\\\\\\0')
+   print "'#{str}'"
+RUBY
+}
+
+osascript &lt;&lt;- APPLESCRIPT
+	tell app "Terminal"
+	    launch
+	    activate
+	    do script "clear; cd $(esc "${TM_DIRECTORY}"); $(esc "${TM_JULIA:-julia}") $(esc "${TM_FILEPATH}"); rm -f $(esc "${TM_TMPFILE}")"
+	    set position of first window to { 100, 100 }
+	end tell
+APPLESCRIPT
+</string>
+	<key>input</key>
+	<string>document</string>
+	<key>inputFormat</key>
+	<string>text</string>
+	<key>keyEquivalent</key>
+	<string>@R</string>
+	<key>name</key>
+	<string>Run Julia (Terminal)</string>
+	<key>outputCaret</key>
+	<string>afterOutput</string>
+	<key>outputFormat</key>
+	<string>text</string>
+	<key>outputLocation</key>
+	<string>discard</string>
+	<key>scope</key>
+	<string>source.julia</string>
+	<key>semanticClass</key>
+	<string>process.external.run.julia</string>
+	<key>uuid</key>
+	<string>38C8DF23-43F7-4F9C-A183-37EAD5ED3ADA</string>
+	<key>version</key>
+	<integer>2</integer>
+	<key>requiredCommands</key>
+	<array>
+		<dict>
+			<key>command</key>
+			<string>julia</string>
+			<key>locations</key>
+			<array>
+				<string>/Applications/Julia-0.3.app/Contents/Resources/julia/bin/julia</string>
+			</array>
+			<key>moreInfoURL</key>
+			<string>http://julialang.org/downloads/</string>
+			<key>variable</key>
+			<string>TM_JULIA</string>
+		</dict>
+	</array>
+</dict>
+</plist>
