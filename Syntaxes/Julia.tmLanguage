@@ -494,7 +494,7 @@
 						</dict>
 					</dict>
 					<key>name</key>
-					<string>string.quoted.custom-double.julia</string>
+					<string>string.quoted.other.julia</string>
 					<key>patterns</key>
 					<array>
 						<dict>
@@ -525,7 +525,7 @@
 						</dict>
 					</dict>
 					<key>name</key>
-					<string>string.quoted.backtick.julia</string>
+					<string>string.interpolated.julia</string>
 					<key>patterns</key>
 					<array>
 						<dict>
