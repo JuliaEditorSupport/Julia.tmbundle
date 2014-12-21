@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>beforeRunningCommand</key>
+	<string>nop</string>
+	<key>command</key>
+	<string>#!/bin/bash
+
+if [ -z "${TM_SELECTED_TEXT}" ]; then
+    # echo TM_SELECTED_TEXT not defined
+    CONTENTS=${TM_CURRENT_LINE}
+else
+    # echo TM_SELECTED_TEXT defined
+    CONTENTS=${TM_SELECTED_TEXT}
+fi
+
+osascript "$TM_BUNDLE_SUPPORT/paste_script_in_target_terminal_process.applescript" "$CONTENTS" "julia"</string>
+	<key>input</key>
+	<string>none</string>
+	<key>inputFormat</key>
+	<string>text</string>
+	<key>keyEquivalent</key>
+	<string>@e</string>
+	<key>name</key>
+	<string>Evaluate Julia</string>
+	<key>outputCaret</key>
+	<string>afterOutput</string>
+	<key>outputFormat</key>
+	<string>text</string>
+	<key>outputLocation</key>
+	<string>discard</string>
+	<key>scope</key>
+	<string>source.julia</string>
+	<key>semanticClass</key>
+	<string>process.external.run.julia</string>
+	<key>uuid</key>
+	<string>150934C9-9F98-472A-95CB-74D92836ABD8</string>
+	<key>version</key>
+	<integer>2</integer>
+</dict>
+</plist>
