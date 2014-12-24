@@ -6,27 +6,10 @@
 	<string>nop</string>
 	<key>command</key>
 	<string>#!/bin/bash
-[[ -z "$TM_FILEPATH" ]] &amp;&amp; TM_TMPFILE=$(mktemp -t pythonInTerm)
-: "${TM_FILEPATH:=$TM_TMPFILE}"; cat &gt;"$TM_FILEPATH"
 
-esc () {
-STR="$1" ruby18 &lt;&lt;"RUBY"
-   str = ENV['STR']
-   str = str.gsub(/'/, "'\\\\''")
-   str = str.gsub(/[\\"]/, '\\\\\\0')
-   print "'#{str}'"
-RUBY
-}
+CONTENTS="reload(\"${TM_FILEPATH}\")"
 
-osascript &lt;&lt;- APPLESCRIPT
-	tell app "Terminal"
-	    launch
-	    activate
-	    do script "clear; cd $(esc "${TM_DIRECTORY}"); $(esc "${TM_JULIA:-julia}") $(esc "${TM_FILEPATH}"); rm -f $(esc "${TM_TMPFILE}")"
-	    set position of first window to { 100, 100 }
-	end tell
-APPLESCRIPT
-</string>
+osascript "$TM_BUNDLE_SUPPORT/paste_script_in_target_terminal_process.applescript" "$CONTENTS" "julia"</string>
 	<key>input</key>
 	<string>document</string>
 	<key>inputFormat</key>
