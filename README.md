@@ -6,7 +6,7 @@
 ### Installation
 
 	cd ~/Library/Application\ Support/TextMate/Bundles/
-	git clone https://github.com/nanoant/Julia.tmbundle.git
+	git clone https://github.com/JuliaLang/Julia.tmbundle.git
 
 ### License
 
