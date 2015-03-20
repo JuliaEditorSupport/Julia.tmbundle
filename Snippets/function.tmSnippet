@@ -6,8 +6,6 @@
 	<string>function $1($2)
 	$3
 end</string>
-	<key>keyEquivalent</key>
-	<string>~f</string>
 	<key>name</key>
 	<string>function</string>
 	<key>scope</key>
