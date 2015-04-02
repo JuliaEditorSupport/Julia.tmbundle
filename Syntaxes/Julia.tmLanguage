@@ -205,9 +205,14 @@
 							<key>name</key>
 							<string>entity.name.function.julia</string>
 						</dict>
+						<key>2</key>
+						<dict>
+							<key>name</key>
+							<string>support.type.julia</string>
+						</dict>
 					</dict>
 					<key>match</key>
-					<string>^\s*([a-zA-Z0-9\._]+!?)(?=.*\)\s*=(?!=))</string>
+					<string>([\w.!]+)({[^}]*})?\((?=.*\)\s*=(?!=))</string>
 				</dict>
 				<dict>
 					<key>captures</key>
@@ -222,9 +227,14 @@
 							<key>name</key>
 							<string>entity.name.function.julia</string>
 						</dict>
+						<key>3</key>
+						<dict>
+							<key>name</key>
+							<string>support.type.julia</string>
+						</dict>
 					</dict>
 					<key>match</key>
-					<string>\b(function|stagedfunction|macro)\s+([a-zA-Z0-9_\.]+!?)\b</string>
+					<string>\b(function|stagedfunction|macro)\s+([\w.!]+)({[^}]*})?\(</string>
 				</dict>
 			</array>
 		</dict>
@@ -285,6 +295,12 @@
 					<string>(?:=|:=|\+=|-=|\*=|/=|//=|\.//=|\.\*=|\\=|\.\\=|^=|\.^=|%=|\|=|&amp;=|\$=|&lt;&lt;=|&gt;&gt;=)</string>
 					<key>name</key>
 					<string>keyword.operator.update.julia</string>
+				</dict>
+				<dict>
+					<key>match</key>
+					<string>(?:::(?:(?:Union)?\([^)]*\)|\w+(?:{[^}]*})?))(?:\.\.\.)?</string>
+					<key>name</key>
+					<string>support.type.julia</string>
 				</dict>
 				<dict>
 					<key>match</key>
@@ -595,25 +611,9 @@
 						</dict>
 					</dict>
 					<key>match</key>
-					<string>(type|immutable)\s+([a-zA-Z0-9_]+)(\s*(&lt;:)\s*[.a-zA-Z0-9_:]+)?</string>
+					<string>(type|immutable)\s+(\w+)(\s*(&lt;:)\s*\w+(?:{.*})?)?</string>
 					<key>name</key>
 					<string>meta.type.julia</string>
-				</dict>
-				<dict>
-					<key>captures</key>
-					<dict>
-						<key>2</key>
-						<dict>
-							<key>name</key>
-							<string>support.type.julia</string>
-						</dict>
-					</dict>
-					<key>comment</key>
-					<string>Matches a typed variable, such as 'id::String'</string>
-					<key>match</key>
-					<string>([a-zA-Z0-9_]+)(::[a-zA-Z0-9_{}]+)</string>
-					<key>name</key>
-					<string>meta.other.typed-variable.julia</string>
 				</dict>
 			</array>
 		</dict>
