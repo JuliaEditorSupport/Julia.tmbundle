@@ -422,17 +422,22 @@
 			<array>
 				<dict>
 					<key>begin</key>
-					<string>'</string>
+					<string>(i?json)(""")</string>
 					<key>beginCaptures</key>
 					<dict>
-						<key>0</key>
+						<key>1</key>
 						<dict>
 							<key>name</key>
-							<string>punctuation.definition.string.begin.julia</string>
+							<string>support.function.macro.julia</string>
+						</dict>
+						<key>2</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.string.end.julia</string>
 						</dict>
 					</dict>
 					<key>end</key>
-					<string>'</string>
+					<string>"""</string>
 					<key>endCaptures</key>
 					<dict>
 						<key>0</key>
@@ -442,12 +447,48 @@
 						</dict>
 					</dict>
 					<key>name</key>
-					<string>string.quoted.single.julia</string>
+					<string>embed.json.julia</string>
 					<key>patterns</key>
 					<array>
 						<dict>
 							<key>include</key>
-							<string>#string_escaped_char</string>
+							<string>source.json</string>
+						</dict>
+					</array>
+				</dict>
+				<dict>
+					<key>begin</key>
+					<string>(i?yaml)(""")</string>
+					<key>beginCaptures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>support.function.macro.julia</string>
+						</dict>
+						<key>2</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.string.end.julia</string>
+						</dict>
+					</dict>
+					<key>end</key>
+					<string>"""</string>
+					<key>endCaptures</key>
+					<dict>
+						<key>0</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.string.end.julia</string>
+						</dict>
+					</dict>
+					<key>name</key>
+					<string>embed.yaml.julia</string>
+					<key>patterns</key>
+					<array>
+						<dict>
+							<key>include</key>
+							<string>source.yaml</string>
 						</dict>
 					</array>
 				</dict>
