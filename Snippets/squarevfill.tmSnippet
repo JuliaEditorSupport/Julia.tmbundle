@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>content</key>
+	<string>▥</string>
+	<key>name</key>
+	<string>squarevfill</string>
+	<key>scope</key>
+	<string>source.julia</string>
+	<key>tabTrigger</key>
+	<string>\squarevfill</string>
+	<key>uuid</key>
+	<string>04D660D8-A4D7-49E6-A9E3-45559CD9559B</string>
+</dict>
+</plist>

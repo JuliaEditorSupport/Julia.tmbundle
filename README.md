@@ -8,11 +8,21 @@
 	cd ~/Library/Application\ Support/TextMate/Bundles/
 	git clone https://github.com/JuliaLang/Julia.tmbundle.git
 
+### Unicode symbols
+
+Unicode symbols may be entered into a document in
+[the same way as in the REPL][julia_vars]&mdash;that is,
+type `\`, then the name of the symbol (e.g., `delta`),
+then `<tab>`, to get the symbol (e.g., &lsquo;&delta;&rsquo;) as a Unicode
+UTF8 character.
+
+[julia_vars]: http://docs.julialang.org/en/stable/manual/variables/
+
 ### License
 
-This bundle is released under MIT license:
+This bundle is released under the MIT license:
 
-> Copyright (c) 2012-2014 Stefan Karpinski, Elliot Saba, Dirk Gadsden,
+> Copyright (c) 2012-2016 Stefan Karpinski, Elliot Saba, Dirk Gadsden,
 > Adam Strzelecki, Jonathan Malmaud and other contributors:
 >
 > https://github.com/JuliaLang/Julia.tmbundle/contributors
