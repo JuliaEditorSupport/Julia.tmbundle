@@ -234,7 +234,7 @@
 						</dict>
 					</dict>
 					<key>match</key>
-					<string>\b(function|stagedfunction|macro)\s+([\w.!]+)({[^}]*})?\(</string>
+					<string>\b(function|macro)\s+([\w.!]+)({[^}]*})?\(</string>
 				</dict>
 			</array>
 		</dict>
@@ -244,13 +244,13 @@
 			<array>
 				<dict>
 					<key>match</key>
-					<string>\b(?:function|stagedfunction|type|immutable|macro|quote|abstract|bitstype|typealias|module|baremodule|new)\b</string>
+					<string>\b(?:function|(mutable\s+)?struct|macro|quote|((primitive|abstract)\s+)?type|immutable|module|baremodule|new|where)\b</string>
 					<key>name</key>
 					<string>keyword.other.julia</string>
 				</dict>
 				<dict>
 					<key>match</key>
-					<string>\b(?:if|else|elseif|while|for|in|begin|let|end|do|try|catch|finally|return|break|continue)\b</string>
+					<string>\b(?:if|else|elseif|while|for|in|isa|begin|let|end|do|try|catch|finally|return|break|continue)\b</string>
 					<key>name</key>
 					<string>keyword.control.julia</string>
 				</dict>
@@ -611,7 +611,7 @@
 						</dict>
 					</dict>
 					<key>match</key>
-					<string>(type|immutable)\s+(\w+)(\s*(&lt;:)\s*\w+(?:{.*})?)?</string>
+					<string>(((primitive|abstract)\s+)?type|(mutable\s+)?struct|immutable)\s+(\w+)(\s*(&lt;:)\s*\w+(?:{.*})?)?</string>
 					<key>name</key>
 					<string>meta.type.julia</string>
 				</dict>
