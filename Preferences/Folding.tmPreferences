@@ -11,11 +11,11 @@
 		<key>decreaseIndentPattern</key>
 		<string>^\s*(end|else|elseif|catch|finally)\b.*$</string>
 		<key>foldingStartMarker</key>
-		<string>^(\s*|.*=\s*|.*@\w*\s*)(if|while|for|function|stagedfunction|macro|immutable|type|let|quote|try|begin|module|.*\)\s*do)\b(?!.*\bend\b[^\]]*$).*$</string>
+		<string>^(\s*|.*=\s*|.*@\w*\s*)(if|while|for|function|macro|((abstract|primitive)\s+)?type|(mutable\s+)?struct|immutable|let|quote|try|begin|module|.*\)\s*do)\b(?!.*\bend\b[^\]]*$).*$</string>
 		<key>foldingStopMarker</key>
 		<string>^\s*end\b.*$</string>
 		<key>increaseIndentPattern</key>
-		<string>^(\s*|.*=\s*|.*@\w*\s*)(if|while|for|function|stagedfunction|macro|immutable|type|let|quote|try|begin|.*\)\s*do|else|elseif|catch|finally)\b(?!.*\bend\b[^\]]*$).*$</string>
+		<string>^(\s*|.*=\s*|.*@\w*\s*)(if|while|for|function|macro|((abstract|primitive)\s+)?type|(mutable\s+)?struct|immutable|let|quote|try|begin|.*\)\s*do|else|elseif|catch|finally)\b(?!.*\bend\b[^\]]*$).*$</string>
 	</dict>
 	<key>uuid</key>
 	<string>B9FA1624-24DD-44AD-BB52-CEBECE1E8DAC</string>
