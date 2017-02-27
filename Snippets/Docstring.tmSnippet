@@ -9,6 +9,8 @@ $3
 """ -&gt;</string>
 	<key>name</key>
 	<string>Docstring</string>
+	<key>scope</key>
+	<string>source.julia</string>
 	<key>tabTrigger</key>
 	<string>doc</string>
 	<key>uuid</key>

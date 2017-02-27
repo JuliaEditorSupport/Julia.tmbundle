@@ -8,6 +8,8 @@
 end</string>
 	<key>name</key>
 	<string>type</string>
+	<key>scope</key>
+	<string>source.julia</string>
 	<key>tabTrigger</key>
 	<string>t</string>
 	<key>uuid</key>
